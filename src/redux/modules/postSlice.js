@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
+import axios from "axios";
 import { getCookie } from "../../shared/Cookie";
 
 import { instance } from "../../core/api/axios";
@@ -22,8 +22,12 @@ export const __postPost = createAsyncThunk(
 
     console.log(config);
     try {
-      const data = await instance.post("/api/post", payload, config);
-
+      // const data = await instance.post("/api/post", payload, config);
+      const data = await axios.post(
+        `http://43.201.111.129/api/post`,
+        payload,
+        config
+      );
       return thunkAPI.fulfillWithValue(data.data);
     } catch (error) {
       console.log(error);
@@ -38,8 +42,8 @@ export const __upDatePost = createAsyncThunk(
     try {
       console.log(payload);
 
-      const data = await instance.put(
-        `/api/post/${payload[0]}`,
+      const data = await axios.put(
+        `http://43.201.111.129/api/post/${payload[0]}`,
         payload[1],
         config
       );
@@ -55,7 +59,10 @@ export const __deletePost = createAsyncThunk(
   "__deletePost",
   async (payload, thunkAPI) => {
     try {
-      const data = await instance.delete(`/api/post/${payload}`, config);
+      const data = await axios.delete(
+        `http://43.201.111.129/api/post/${payload}`,
+        config
+      );
       return thunkAPI.fulfillWithValue(data.data);
     } catch (error) {
       // console.log("에러가 발생했습니다.", error);
@@ -69,7 +76,9 @@ export const __getPosts = createAsyncThunk(
   async (payload, thunkAPI) => {
     console.log(payload);
     try {
-      const data = await instance.get(`/api/post/category?category=${payload}`);
+      const data = await axios.get(
+        `http://43.201.111.129/api/post/category?category=${payload}`
+      );
 
       return thunkAPI.fulfillWithValue(data.data);
     } catch (error) {
@@ -84,8 +93,8 @@ export const __getHospital = createAsyncThunk(
   async (payload, thunkAPI) => {
     console.log(payload);
     try {
-      const data = await instance.get(
-        `api/post/hospital?hospital-name=${payload}`
+      const data = await axios.get(
+        `http://43.201.111.129/api/post/hospital?hospital-name=${payload}`
       );
       return thunkAPI.fulfillWithValue(data.data);
     } catch (error) {

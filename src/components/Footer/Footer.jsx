@@ -23,8 +23,8 @@ function Footer() {
             </li>
             <li>
               ChumBaek
-              <a href="https://github.com/dev-rara">
-                https://github.com/starMinK
+              <a href="https://github.com/civilcoy">
+                https://github.com/civilcoy
               </a>
             </li>
           </ul>

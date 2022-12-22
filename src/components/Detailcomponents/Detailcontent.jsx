@@ -10,10 +10,8 @@ const DetailContent = ({ state, posts }) => {
 
   const deleteHandler = () => {
     if (!window.confirm("해당글을 삭제하시겠습니까?")) return;
-    dispatch(__deletePost(posts.postId));
-
+    dispatch(__deletePost(state.postId));
     window.location.href = "/";
-
   };
 
   const updateHandler = () => {
@@ -137,9 +135,7 @@ const DetailSection = styled.section`
     margin-bottom: 2%;
     box-sizing: border-box;
     h2 {
-
       font-size: 1.6rem;
-
     }
     .imgBox {
       display: flex;
