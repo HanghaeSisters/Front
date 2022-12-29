@@ -17,3 +17,7 @@
 3.참여인원: 6명
 * FE: 오수민, 김진영, 정소영
 * BE: 김소라, 김규민, 정첨백
+
+4. 개발 관련 링크
+ * 백엔드 깃허브 주소: https://github.com/HanghaeSisters/Back.git
+ * 기획 관련 노션: https://powerful-toucan-508.notion.site/d2dffd18ee9d4d8e958185e288c08a2e
